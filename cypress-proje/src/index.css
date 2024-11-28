@@ -1,0 +1,9 @@
+
+form {
+  display: flex;
+  flex-direction: column; 
+  gap: 3rem;
+  align-items: center;
+ margin-top: 5rem;
+
+}

@@ -3,6 +3,7 @@ import { Form, FormGroup, Label, Input, Button, FormFeedback } from "reactstrap"
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
+
 export default function Login() {
   const initialData = {
     email: "",
@@ -100,7 +101,7 @@ export default function Login() {
   return (
     <Form onSubmit={handleSubmit}>
       <FormGroup>
-        <Label for="email">Email</Label>
+        <Label for="email">Email </Label>
         <Input
           id="email"
           name="email"
@@ -109,6 +110,7 @@ export default function Login() {
           invalid={errors.email}
           onChange={handleChange}
         />
+       
         {errors.email && <FormFeedback>{ErrorMessages.email}</FormFeedback>}
       </FormGroup>
 
@@ -122,7 +124,7 @@ export default function Login() {
           invalid={errors.password}
           onChange={handleChange}
         />
-        {errors.password && <FormFeedback>{ErrorMessages.password}</FormFeedback>}
+       {errors.password && <FormFeedback>{ErrorMessages.password}</FormFeedback>}
       </FormGroup>
 
       <FormGroup>
