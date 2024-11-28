@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Form, FormGroup, Label, Input, Button, FormFeedback } from "reactstrap";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 export default function Login() {
@@ -15,7 +15,7 @@ export default function Login() {
     password: "Şifreniz en az bir büyük karakter ve bir küçük karakter içermelidir. Uzunluğu en az 9 olmalıdır",
   };
 
-  const navigate = useNavigate();
+  const history = useHistory();
   const [form, setForm] = useState(initialData);
   const [errors, setErrors] = useState({
     email: false,
@@ -90,9 +90,9 @@ export default function Login() {
           (item) => item.password === form.password && item.email === form.email
         );
         if (user) {
-          navigate('/success');
+            history.push('/success');
         } else {
-          navigate('/error');
+            history.push('/error');
         }
       });
   };
